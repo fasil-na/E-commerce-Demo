@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link to="/" className="logo">AJIO</Link>
+      <Link to="/" className="logo" style={{textDecoration:'none',color:'white'}}>AJIO</Link>
       <div className="search-bar">
         <input type="text" placeholder="Search for products, brands and more" />
       </div>

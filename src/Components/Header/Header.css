@@ -52,7 +52,7 @@
   .nav-links a:hover {
     text-decoration: underline;
   }
-  
+
  
   .signin {
     color: #fff; /* Set sign-in link color to white */
@@ -83,5 +83,8 @@
     .nav-links li {
       margin: 10px 0;
     }
+  }
+  *{
+    text-decoration: none;
   }
   

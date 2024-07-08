@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './Products.css';
+import React, { useEffect, useState } from "react";
+import "./Products.css";
 import Pagination from "../Pagination/Pagination";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -12,15 +12,15 @@ const Products = () => {
 
   useEffect(() => {
     // Example API call to fetch products
-    fetch('https://fakestoreapi.com/products')
-      .then(response => response.json())
-      .then(data => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
         setProducts(data);
         setTotalResults(data.length); // Update totalResults
         setLoading(false);
       })
-      .catch(error => {
-        console.error('Error fetching products:', error);
+      .catch((error) => {
+        console.error("Error fetching products:", error);
         setLoading(false);
       });
   }, []);
@@ -36,19 +36,27 @@ const Products = () => {
   // Calculate current products based on currentPage and pageSize
   const indexOfLastProduct = currentPage * pageSize;
   const indexOfFirstProduct = indexOfLastProduct - pageSize;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   return (
     <div className="products-container">
       <div className="products">
-        {currentProducts.map(product => (
-          <Link to={`/products/${product.id}`} key={product.id} className="product-link">
-            <div className="product-card">
-              <img src={product.image} alt={product.title} className="product-image" />
-              <h2 className="product-title">{product.title}</h2>
-              <p className="product-price">${product.price}</p>
-            </div>
-          </Link>
+        {currentProducts.map((product) => (
+          <Link to={`/products/${product.id}`} className="product-link" key={product.id}>
+  <div className="product-card">
+    <img src={product.image} alt={product.title} className="product-image" />
+    <h4 className="product-price" style={{ fontSize: '1.2rem', textDecoration: 'none !important' }}>
+      <span>{product.title}</span>
+    </h4>
+    <p className="product-price" style={{ textDecoration: 'none !important' }}>
+      ${product.price}
+    </p>
+  </div>
+</Link>
+
         ))}
       </div>
       <Pagination
@@ -59,6 +67,6 @@ const Products = () => {
       />
     </div>
   );
-}
+};
 
 export default Products;
