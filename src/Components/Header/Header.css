@@ -1,0 +1,87 @@
+/* Basic styling for header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .search-bar {
+    flex-grow: 2;
+    margin: 0 20px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .navbar {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  .signin {
+    color: #fff; /* Set sign-in link color to white */
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1rem;
+  }
+  
+  .signin:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+    }
+  
+    .search-bar {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  }
+  

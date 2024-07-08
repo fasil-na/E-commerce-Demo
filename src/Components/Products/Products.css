@@ -1,0 +1,38 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-title {
+    font-size: 0.9rem;
+    margin: 10px 0;
+  }
+  
+  .product-price {
+    color: #888;
+    font-size: 1rem;
+  }
+  .product-title,
+.product-price {
+  color: inherit; /* Ensures text color is inherited from parent */
+  text-decoration: none; /* Removes underline */
+}
+  
